@@ -1,4 +1,4 @@
-# line-bot
+# line-chat-bot
 
 ## Description
 30 Days challenge-15 A simple line-bot.
@@ -12,7 +12,7 @@ Try to chat with the bot and learn more about me:D
 
 ## Project preview
 
-![image](https://github.com/windate3411/line-bot/blob/master/demo.gif)
+![image](https://github.com/windate3411/line-chat-bot/blob/master/demo.gif)
 
 ## Project Demo
 
