@@ -22,13 +22,23 @@ const linebotParser = bot.parser();
 // 當有人傳送訊息給Bot時
 bot.on('message', function (event) {
   // event.message.text是使用者傳給bot的訊息
-  // 使用event.reply(要回傳的訊息)方法可將訊息回傳給使用者
   var replyMsg = `Hello你剛才說的是:${event.message.text}`;
-  event.reply(replyMsg).then(function (data) {
-    // 當訊息成功回傳後的處理
-  }).catch(function (error) {
-    // 當訊息回傳失敗後的處理
-  });
+  switch (event.message.text) {
+    case '你':
+      event.reply('我是Danny,剛結束長達9個月的全端網路開發課程，熱愛教育與電商平台，正在積極尋找網路開發的職缺!')
+      break;
+    case '工作':
+      event.reply('我聽不懂你在說什麼欸!問點別的嘛!')
+      break;
+    default:
+      event.reply('我聽不懂你在說什麼欸!問點別的嘛!')
+      break;
+  }
+  // event.reply(replyMsg).then(function (data) {
+  //   // 當訊息成功回傳後的處理
+  // }).catch(function (error) {
+  //   // 當訊息回傳失敗後的處理
+  // });
 });
 
 app.post('/', linebotParser);
