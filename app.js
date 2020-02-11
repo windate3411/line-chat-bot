@@ -22,22 +22,17 @@ const linebotParser = bot.parser();
 // 當有人傳送訊息給Bot時
 bot.on('message', function (event) {
   // event.message.text是使用者傳給bot的訊息
-  var replyMsg;
-  const personalKeyWords = ['你', 'you', '是誰', '介紹']
-
-  for (item of personalKeyWords) {
-    const regrex = new RegExp(`${item}`, 'gi')
-    if (regrex.test(event.message.text)) {
-      event.reply('我是Danny,剛結束長達9個月的全端網路開發課程，熱愛教育與電商平台，正在積極尋找網路開發的職缺!')
-    } else {
-      switch (event.message.text) {
-        case 'Danny':
-          event.reply('Danny 是個好可愛的人喔')
-          break;
-        default:
-          event.reply('我聽不懂你在說什麼欸!問點別的嘛!')
-          break;
-      }
+  const regrex = /你|誰|介紹|you|yourself/
+  if (regrex.test(event.message.text)) {
+    event.reply('我是Danny,剛結束長達9個月的全端網路開發課程，熱愛教育與電商平台，正在積極尋找網路開發的職缺!')
+  } else {
+    switch (event.message.text) {
+      case 'Danny':
+        event.reply('Danny 是個好可愛的人喔')
+        break;
+      default:
+        event.reply('我聽不懂你在說什麼欸!問點別的嘛!')
+        break;
     }
   }
   // event.reply(replyMsg).then(function (data) {
